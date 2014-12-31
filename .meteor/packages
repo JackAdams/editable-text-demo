@@ -1,0 +1,19 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+meteorhacks:fast-render
+aldeed:collection2
+dburles:mongo-collection-instances
+babrahams:editable-text
+babrahams:transactions
+ian:accounts-ui-bootstrap-3
+autopublish
+accounts-password
+ian:bootstrap-3
+fortawesome:fontawesome
+babrahams:editable-text-wysiwyg-bootstrap-3

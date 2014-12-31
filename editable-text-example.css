@@ -1,0 +1,43 @@
+.post {
+  border-radius: 10px;
+  background-color: #eee;
+  margin: 10px 0;
+  padding: 10px 20px;	
+}
+
+.post hr {
+  border-color: #fff;	
+}
+
+.comment-text {
+  margin: 10px 20px;
+  display: inline-block;
+}
+
+.comment-input {
+  border-radius: 10px;
+  padding: 10px 20px !important;
+  width: 96.5% !important;	
+}
+
+.comment {
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 10px 0;
+}
+
+.post-body {
+  background-color:#fff;
+  padding: 10px 20px;
+  display: inline-block;
+  width: 96.5%;
+}
+
+.post-body-wysiwyg {
+  padding: 10px 18px;	
+}
+
+.undo-redo {
+  width: 100%;
+  margin-bottom:2px;	
+}

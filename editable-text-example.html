@@ -1,0 +1,44 @@
+<head>
+  <title>editable-text-example</title>
+</head>
+
+<body>
+  <a href="https://github.com/JackAdams/editable-text-demo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+  <div class="container">
+    <div style="float:right;margin-top:10px;">{{> undoRedoButtons}}</div>
+    <ul style="list-style-type:none;margin: 10px 0 0 0;padding: 0;display:inline-block;">{{> loginButtons}}</ul>
+    {{> posts}}
+  </div>
+</body>
+
+<template name="posts">
+  <div style="margin-top:10px;">
+    <span class="btn btn-default btn-info editable-text-trigger">
+      <i class="fa fa-plus"></i> New post{{> editableText context=newCommentDoc collection="posts" field="title" autoInsert=true beforeInsert="addTimestampToDoc"}}
+    </span>
+  </div>
+  {{#each posts}}
+    <div class="post">
+      <h2 class="editable-text-trigger">
+        {{> editableText collection="posts" field="title" removeEmpty=true placeholder="Post title" substitute='<i class="fa fa-pencil"></i>'}}
+      </h2>
+      <em style="color:grey;"><strong>{{#if user}}{{user}}{{else}}Anonymous{{/if}}</strong> - {{timestamp}}</em>
+      <hr />
+      <div class="editable-text-trigger">
+        {{> editableText collection="posts" field="body" wysiwyg=true acceptEmpty=true substitute='<i class="fa fa-pencil"></i>' class="post-body" inputClass="post-body-wysiwyg"}}
+      </div>
+      <hr />
+      <h4>Comments</h4>
+      {{#each comments}}
+        <div class="comment editable-text-trigger">
+          {{> editableText collection="comments" field="text" textarea=true removeEmpty=true trustHTML=true substitute='<i class="fa fa-pencil"></i>' class="comment-text" inputClass="comment-input"}}
+        </div>
+      {{/each}}
+      {{#with post_id=_id}}
+        <span class="btn btn-default editable-text-trigger">
+          <i class="fa fa-plus"></i>{{> editableText collection="comments" field="text" autoInsert=true beforeInsert="addTimestampToDoc"}}
+        </span>
+      {{/with}}
+    </div>
+  {{/each}}
+</template>
