@@ -68,6 +68,9 @@ Posts.attachSchema(Schemas.Post);
 Comments.attachSchema(Schemas.Comment);
 Meteor.users.attachSchema(Schemas.User);
 
+EditableText.useTransactions = true;
+EditableText.clientControlsTransactions = true;
+
 addTimestampToDoc = function(doc) {
   var extraFields = {timestamp:Date.now()};
   if (Meteor.user() && this.collection === 'posts') {

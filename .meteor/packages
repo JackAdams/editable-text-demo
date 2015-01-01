@@ -7,6 +7,7 @@
 meteor-platform
 insecure
 meteorhacks:fast-render
+aldeed:simple-schema
 aldeed:collection2
 dburles:mongo-collection-instances
 babrahams:editable-text
