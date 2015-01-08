@@ -1,6 +1,6 @@
 .post {
   border-radius: 10px;
-  background-color: #eee;
+  background-color: #f0f0f0;
   margin: 10px 0;
   padding: 10px 20px;	
 }
@@ -9,8 +9,17 @@
   border-color: #fff;	
 }
 
+.comment-info {
+  color: grey;
+  font-size: smaller;
+  padding: 8px 20px 6px;
+  background-color: #ddd;
+  border-bottom: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+}
+
 .comment-text {
-  margin: 10px 20px;
+  margin: 5px 20px 10px 20px;
   display: inline-block;
 }
 
@@ -24,6 +33,7 @@
   border-radius: 10px;
   background-color: #fff;
   margin: 10px 0;
+  border: 1px solid #ccc;
 }
 
 .post-body {
@@ -39,5 +49,13 @@
 
 .undo-redo {
   width: 100%;
-  margin-bottom:2px;	
+  margin-bottom:2px;
+  text-align: left;	
+}
+
+.list-item {
+  background-color: #d9d9d9;
+  border-radius: 7px;
+  padding: 4px 8px;
+  margin: 8px 8px 0 0;
 }

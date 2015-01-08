@@ -23,6 +23,11 @@ Schemas.Post = new SimpleSchema({
 	type: String,
 	label: "User",
 	optional: true  
+  },
+  tags: {
+	type: [String],
+	label: "Tags",
+	optional: true
   }
 });
 
@@ -39,6 +44,11 @@ Schemas.Comment = new SimpleSchema({
   timestamp: {
 	type: Number,
 	label: "Timestamp"  
+  },
+  user: {
+	type: String,
+	label: "User",
+	optional: true  
   }
 });
 
@@ -71,13 +81,15 @@ Meteor.users.attachSchema(Schemas.User);
 EditableText.useTransactions = true;
 EditableText.clientControlsTransactions = true;
 
-addTimestampToDoc = function(doc) {
-  var extraFields = {timestamp:Date.now()};
-  if (Meteor.user() && this.collection === 'posts') {
-	extraFields.user = Meteor.user().emails[0].address;
+EditableText.registerCallbacks({
+  addTimestampToDoc : function(doc) {
+	var extraFields = {timestamp:Date.now()};
+	if (Meteor.user()) {
+	  extraFields.user = Meteor.user().emails[0].address;
+	}
+	return _.extend(doc,extraFields);
   }
-  return _.extend(doc,extraFields);
-}
+});
 
 if (Meteor.isClient) {
 
@@ -98,8 +110,25 @@ if (Meteor.isClient) {
 	  return {};  
 	},
 	timestamp: function() {
-	  return (new Date(this.timestamp)).toUTCString();	
+	  var time = (new Date(this.timestamp)).toDateString();
+	  return time.substr(0,time.length - 4);	
 	}
   });
   
+}
+
+if (Meteor.isServer) {
+  var destroy = function() {
+	Posts.remove({});
+	Comments.remove({});
+	tx.Transactions.remove({});
+	Posts.insert({_id:"abc123",timestamp:Date.now(),title:"Editable post title - delete this title to remove the post",body:'This is the body of the post, written with the <strong>wysiwyg editor</strong>.  It is editable because we wrote {{&gt; editableText collection="posts" field="body" wysiwyg=true}} in the template instead of {{body}}.<br><br>This demo app was written with meteor packages (aldeed:collection2, babrahams:transactions, ian:accounts-ui-bootstrap-3, meteorhacks:fast-render, babrahams:editable-text-wysiwyg-bootstrap-3) and 200 lines of code (<a href="https://github.com/JackAdams/editable-text-example/blob/master/editable-text-example.html" target="_blank">html: 45 loc</a>, <a href="https://github.com/JackAdams/editable-text-example/blob/master/editable-text-example.js" target="_blank">js: 104 loc</a>, <a href="https://github.com/JackAdams/editable-text-example/blob/master/editable-text-example.css" target="_blank">css: 51 loc</a>). It demonstrates some of the uses of the <a href="https://github.com/JackAdams/meteor-editable-text">babrahams:editable-text</a> package.<br><br>See the source at <a href="https://github.com/JackAdams/editable-text-demo">https://github.com/JackAdams/editable-text-demo.</a>',tags:['Drag to reorder','Click to edit']});
+	Comments.insert({post_id:"abc123",timestamp:Date.now(),text:"To remove a comment, delete the text and press 'Enter'. This is possible because we wrote {{> editableText collection=\"comments\" field=\"text\" textarea=true removeEmpty=true}} instead of {{text}} in the template.",user:"example@example.com"});
+	Comments.insert({post_id:"abc123",timestamp:Date.now(),text:"Sign in with - email:demo@demo.com, password:password - to see the undo/redo stack in action."});
+	Comments.insert({post_id:"abc123",timestamp:Date.now(),text:"All posts will self destruct every 15 minutes."});
+	Meteor.setTimeout(function() {
+	  destroy();
+    },15 * 60 * 1000);
+  }
+  destroy();
 }

@@ -6,7 +6,7 @@ Demo app for the meteor package [babrahams:editable-text-wysiwyg-bootstrap-3](ht
 Packages used (besides `meteor-platform`):
 
     meteorhacks:fast-render
-    babrahams:editable-text-wysiwyg
+    babrahams:editable-text-wysiwyg-bootstrap-3
 	aldeed:collection2
 	ian:accounts-ui-bootstrap-3
 	babrahams:transactions
