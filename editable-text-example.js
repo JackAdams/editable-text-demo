@@ -101,10 +101,10 @@ if (Meteor.isClient) {
 
   Template.posts.helpers({
     posts: function() {
-      return Posts.find({deleted:{$exists:false}},{sort:{timestamp:-1}});
+      return Posts.find({},{sort:{timestamp:-1}});
     },
 	comments: function() {
-	  return Comments.find({post_id:this._id,deleted:{$exists:false}},{sort:{timestamp:1}});
+	  return Comments.find({post_id:this._id},{sort:{timestamp:1}});
 	},
 	newCommentDoc: function() {
 	  return {};  
