@@ -10,7 +10,7 @@ babrahams:editable-list@0.1.6
 babrahams:editable-text@0.6.9
 babrahams:editable-text-wysiwyg@0.3.4
 babrahams:editable-text-wysiwyg-bootstrap-3@0.2.4
-babrahams:transactions@0.6.2
+babrahams:transactions@0.6.5
 base64@1.0.2
 binary-heap@1.0.2
 blaze@2.0.4
