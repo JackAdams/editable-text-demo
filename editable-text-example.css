@@ -1,8 +1,9 @@
 .post {
   border-radius: 10px;
-  background-color: #f0f0f0;
+  background-color: #fefee6;
   margin: 10px 0;
-  padding: 10px 20px;	
+  padding: 10px 20px;
+  border: 10px solid #F0AD4E;
 }
 
 .post hr {
@@ -10,11 +11,11 @@
 }
 
 .comment-info {
-  color: grey;
+  color: #969670;
   font-size: smaller;
   padding: 8px 20px 6px;
-  background-color: #ddd;
-  border-bottom: 1px solid #ccc;
+  background-color: #ffeecc;
+  border-bottom: 1px solid #ccdcc9;
   border-radius: 10px 10px 0 0;
 }
 
@@ -33,14 +34,15 @@
   border-radius: 10px;
   background-color: #fff;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ccdcc9;
 }
 
 .post-body {
   background-color:#fff;
   padding: 10px 20px;
   display: inline-block;
-  width: 96.5%;
+  border: 1px solid #ececd9;
+  width:100%;
 }
 
 .post-body-wysiwyg {
@@ -54,8 +56,9 @@
 }
 
 .list-item {
-  background-color: #d9d9d9;
+  background-color: #ffeecc;
   border-radius: 7px;
   padding: 4px 8px;
   margin: 8px 8px 0 0;
+  border: 1px solid #c9c9c9;
 }
