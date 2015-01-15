@@ -10,5 +10,6 @@ Packages used (besides `meteor-platform`):
 	aldeed:collection2
 	ian:accounts-ui-bootstrap-3
 	babrahams:transactions
+	babrahams:editable-list
 
-Repos: [babrahams:editable-text](https://github.com/JackAdams/meteor-editable-text) and [babrahams:editable-text-wysiwyg-bootstrap-3](https://github.com/JackAdams/meteor-editable-text-wysiwyg-bootstrap-3)
+Repos: [babrahams:editable-list](https://github.com/JackAdams/meteor-editable-list) and [babrahams:editable-text-wysiwyg-bootstrap-3](https://github.com/JackAdams/meteor-editable-text-wysiwyg-bootstrap-3) (both of which depend on and have further documentation at [babrahams:editable-text](https://github.com/JackAdams/meteor-editable-text))
