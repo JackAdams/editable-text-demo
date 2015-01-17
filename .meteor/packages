@@ -10,8 +10,8 @@ meteorhacks:fast-render
 aldeed:simple-schema
 aldeed:collection2
 dburles:mongo-collection-instances
-babrahams:editable-text
 babrahams:transactions
+babrahams:editable-text
 ian:accounts-ui-bootstrap-3
 autopublish
 accounts-password
