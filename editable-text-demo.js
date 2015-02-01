@@ -116,6 +116,16 @@ if (Meteor.isClient) {
 	timestamp: function() {
 	  var time = (new Date(this.timestamp)).toDateString();
 	  return time.substr(0,time.length - 4);	
+	},
+	postOptions : function() {
+	  return {
+		collection:"posts",
+		field:"title",
+		removeEmpty:true,
+		acceptEmpty:true,
+		placeholder:"Post title",
+		substitute:'<i class="fa fa-pencil"></i>'  
+	  }
 	}
   });
   

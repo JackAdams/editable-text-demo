@@ -20,7 +20,7 @@
   {{#each posts}}
     <div class="post">
       <h2 class="editable-text-trigger">
-        {{> editableText collection="posts" field="title" removeEmpty=true acceptEmpty=true placeholder="Post title" substitute='<i class="fa fa-pencil"></i>'}}
+        {{> editableText options=postOptions}}
       </h2>
       <span style="color:grey;"><strong>{{#if user}}{{> editableText collection="posts" field="user"}}{{else}}Anonymous{{/if}}</strong> - {{timestamp}}</span>
       <hr />
