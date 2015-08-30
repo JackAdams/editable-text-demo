@@ -20,7 +20,7 @@
   {{#each posts}}
     <div class="post">
       <h2 class="editable-text-trigger">
-        {{> editableText options=postOptions}}
+        {{> editableText options=postOptions emptyText="No title"}}
       </h2>
       <span style="color:grey;"><strong>{{#if user}}{{> editableText collection="posts" field="user"}}{{else}}Anonymous{{/if}}</strong> - {{timestamp}}</span>
       <hr />
@@ -35,7 +35,7 @@
       {{#each comments}}
         <div class="comment editable-text-trigger">
           <div class="comment-info"><strong>{{#if user}}{{user}}{{else}}Anonymous{{/if}}</strong> commented on {{timestamp}}</div>
-          {{> editableText collection="comments" field="text" textarea=true removeEmpty=true trustHTML=true substitute='<i class="fa fa-pencil"></i>' class="comment-text" inputClass="comment-input"}}
+          {{> editableText collection="comments" field="text" textarea=true removeEmpty=true acceptEmpty=true trustHTML=true substitute='<i class="fa fa-pencil"></i>' class="comment-text" inputClass="comment-input"}}
         </div>
       {{/each}}
       {{#with post_id=_id}}

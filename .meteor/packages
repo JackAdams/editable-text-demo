@@ -5,17 +5,20 @@
 # but you can also edit it by hand.
 
 meteor-platform
-insecure
-meteorhacks:fast-render
-aldeed:simple-schema
-aldeed:collection2
-dburles:mongo-collection-instances
-babrahams:transactions
-babrahams:editable-text
-ian:accounts-ui-bootstrap-3
 autopublish
-accounts-password
-ian:bootstrap-3
-fortawesome:fontawesome
-babrahams:editable-text-wysiwyg-bootstrap-3
+insecure
+aldeed:collection2
+babrahams:editable-json
+babrahams:editable-text
+babrahams:editable-text-wysiwyg
 babrahams:editable-list
+accounts-password
+twbs:bootstrap
+fortawesome:fontawesome
+babrahams:undo-redo
+reactive-dict
+ian:accounts-ui-bootstrap-3
+meteorhacks:fast-render
+babrahams:constellation
+constellation:shorten-collection-names
+babrahams:editable-text-wysiwyg-bootstrap-3

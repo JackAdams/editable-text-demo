@@ -124,7 +124,7 @@ if (Meteor.isClient) {
 		removeEmpty:true,
 		acceptEmpty:true,
 		placeholder:"Post title",
-		substitute:'<i class="fa fa-pencil"></i>'  
+		substitute:'<i class="fa fa-pencil"></i>'
 	  }
 	}
   });
