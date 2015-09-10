@@ -96,10 +96,6 @@ EditableText.registerCallbacks({
 tx.requireUser = false; // Means a user who is not logged in gets to undo/redo
 
 if (Meteor.isClient) {
-
-  Tracker.autorun(function() {
-	EditableText.useTransactions = (Meteor.user()) ? true : false;
-  });
   
   tx.undoRedoButtonClass = 'btn btn-default undo-redo';
 
