@@ -7,8 +7,8 @@ Schemas.Post = new SimpleSchema({
   title: {
 	type: String,
 	label: "Title",
-	max: 200,
-	optional:true
+	optional:true,
+	max: 200
   },
   body: {
 	type: String,
@@ -71,6 +71,11 @@ Schemas.User = new SimpleSchema({
         type: Object,
         optional: true,
         blackbox: true
+    },
+    profile: {
+        type: Object,
+        optional: true,
+        blackbox: true
     }
 });
 
@@ -84,11 +89,11 @@ EditableText.maximumImageSize = 200000;
 
 EditableText.registerCallbacks({
   addTimestampToDoc : function(doc) {
-	var extraFields = {timestamp:Date.now()};
+	var extraFields = {timestamp: Date.now()};
 	if (Meteor.user()) {
 	  extraFields.user = Meteor.user().emails[0].address;
 	}
-	return _.extend(doc,extraFields);
+	return _.extend(doc, extraFields);
   }
 });
 
@@ -101,17 +106,17 @@ if (Meteor.isClient) {
 
   Template.posts.helpers({
     posts: function() {
-      return Posts.find({},{sort:{timestamp:-1}});
+      return Posts.find({}, {sort: {timestamp: -1}});
     },
 	comments: function() {
-	  return Comments.find({post_id:this._id},{sort:{timestamp:1}});
+	  return Comments.find({post_id: this._id}, {sort: {timestamp: 1}});
 	},
 	newCommentDoc: function() {
 	  return {};  
 	},
 	timestamp: function() {
 	  var time = (new Date(this.timestamp)).toDateString();
-	  return time.substr(0,time.length - 4);	
+	  return time.substr(0, time.length - 4);	
 	},
 	postOptions : function() {
 	  return {

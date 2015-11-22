@@ -4,10 +4,10 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 autopublish
 insecure
 aldeed:collection2
+babrahams:constellation
 babrahams:editable-json
 babrahams:editable-text
 babrahams:editable-text-wysiwyg
@@ -16,9 +16,25 @@ accounts-password
 twbs:bootstrap
 fortawesome:fontawesome
 babrahams:undo-redo
-reactive-dict
 ian:accounts-ui-bootstrap-3
 meteorhacks:fast-render
-babrahams:constellation
-constellation:shorten-collection-names
 babrahams:editable-text-wysiwyg-bootstrap-3
+reactive-dict
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+mrt:jquery-ui
+alon:lag-console
+constellation:dump-restore
+fourquet:anti-gravity
