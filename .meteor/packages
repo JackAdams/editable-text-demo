@@ -33,6 +33,4 @@ spacebars
 check
 mrt:jquery-ui
 babrahams:constellation
-standard-minifier-css
-standard-minifier-js
 babrahams:editable-text-froala
