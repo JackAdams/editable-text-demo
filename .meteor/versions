@@ -15,11 +15,11 @@ babel-compiler@6.6.4
 babel-runtime@0.1.8
 babrahams:constellation@0.4.6
 babrahams:editable-json@0.6.4
-babrahams:editable-list@0.4.11
-babrahams:editable-text@0.8.11
+babrahams:editable-list@0.4.12
+babrahams:editable-text@0.8.12
 babrahams:editable-text-froala@0.1.0
-babrahams:editable-text-wysiwyg@0.5.11
-babrahams:editable-text-wysiwyg-bootstrap-3@0.5.11
+babrahams:editable-text-wysiwyg@0.5.12
+babrahams:editable-text-wysiwyg-bootstrap-3@0.5.12
 babrahams:temple@0.4.2
 babrahams:transactions@0.7.13
 babrahams:undo-redo@0.2.8
