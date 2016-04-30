@@ -7,8 +7,6 @@
 autopublish
 insecure
 aldeed:collection2
-babrahams:constellation
-babrahams:editable-json
 babrahams:editable-text
 babrahams:editable-text-wysiwyg
 babrahams:editable-list
@@ -20,7 +18,6 @@ ian:accounts-ui-bootstrap-3
 meteorhacks:fast-render
 babrahams:editable-text-wysiwyg-bootstrap-3
 reactive-dict
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -35,6 +32,7 @@ ejson
 spacebars
 check
 mrt:jquery-ui
-alon:lag-console
-constellation:dump-restore
-fourquet:anti-gravity
+babrahams:constellation
+standard-minifier-css
+standard-minifier-js
+babrahams:editable-text-froala
