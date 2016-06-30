@@ -22,18 +22,18 @@
       <h2 class="editable-text-trigger">
         {{> editableText options=postOptions emptyText="No title"}}
       </h2>
-      <div class="btn-group" style="float: right;">
+      <!--<div class="btn-group" style="float: right;">
         <button class="btn froala {{#if selected 'froala'}}btn-default{{/if}}">Froala</button>
         <button class="btn default {{#if selected 'default'}}btn-default{{/if}}">Default</button>
-      </div>
+      </div>-->
       <span style="color:grey;"><strong>{{#if user}}{{> editableText collection="posts" field="user"}}{{else}}Anonymous{{/if}}</strong> - {{timestamp}}</span>
       <hr />
       <div class="editable-text-trigger">
-        {{#if selected 'froala'}}
+        <!--{{#if selected 'froala'}}
           {{> editableText collection="posts" field="body" editor="froala" class="post-body"}}
-        {{else}}
+        {{else}}-->
           {{> editableText collection="posts" field="body" wysiwyg=true acceptEmpty=true substitute='<i class="fa fa-pencil"></i>' class="post-body" inputClass="post-body-wysiwyg"}}
-        {{/if}}
+        <!--{{/if}}-->
       </div>
       <div class="editable-list-reveal" style="margin-top:10px;color:grey;">
         {{#with tags}}Tags: &nbsp;{{/with}}{{> editableList collection="posts" field="tags" placeholder="New tag" horizontal=true hideInput=true class="list-item" liStyle="margin-top:10px;" inputStyle="color:#000;" editStyle="height:18px;border:0;" objectTypeText="tag" allowPasteMultiple=true}}
