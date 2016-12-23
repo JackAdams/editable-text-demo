@@ -20,7 +20,7 @@
   {{#each posts}}
     <div class="post">
       <h2 class="editable-text-trigger">
-        {{> editableText options=postOptions emptyText="No title"}}
+        {{> editableText options=postOptions emptyText="No title" beforeUpdate="callMethod"}}
       </h2>
       <!--<div class="btn-group" style="float: right;">
         <button class="btn froala {{#if selected 'froala'}}btn-default{{/if}}">Froala</button>
