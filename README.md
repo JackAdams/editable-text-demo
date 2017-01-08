@@ -13,3 +13,5 @@ Packages used (besides `meteor-platform`):
 	babrahams:editable-list
 
 Repos: [babrahams:editable-list](https://github.com/JackAdams/meteor-editable-list) and [babrahams:editable-text-wysiwyg-bootstrap-3](https://github.com/JackAdams/meteor-editable-text-wysiwyg-bootstrap-3) (both of which depend on and have further documentation at [babrahams:editable-text](https://github.com/JackAdams/meteor-editable-text))
+
+Note: if you run this app locally, you can uncomment the Froala-specific code in `editable-text-demo.html` to see a demo of `babrahams:editable-text-froala`.
