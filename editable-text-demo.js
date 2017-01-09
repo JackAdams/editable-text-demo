@@ -164,7 +164,9 @@ if (Meteor.isServer) {
     Comments.insert({post_id:  "abc123", timestamp:Date.now(), text: "To remove a comment, delete the text and press 'Enter'. This is possible because we wrote {{> editableText collection=\"comments\" field=\"text\" textarea=true removeEmpty=true}} instead of {{text}} in the template.", user: "example@example.com"});
     Comments.insert({post_id: "abc123", timestamp:Date.now(), text: "Sign in with - email: demo@demo.com, password: password - for email addresses in posts and comments."});
     Comments.insert({post_id: "abc123", timestamp:Date.now(), text: "All posts will self destruct every 15 minutes."});
-	Accounts.createUser({username: "demo-user", email: "demo@demo.com", password: "password"});
+    if (!Meteor.users.findOne({emails: {$elemMatch: {address: "demo@demo.com"}}})) {
+      Accounts.createUser({username: "demo-user", email: "demo@demo.com", password: "password"});
+    }
     Meteor.setTimeout(function() {
       destroy();
     }, 15 * 60 * 1000);
